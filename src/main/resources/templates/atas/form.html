@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Nova/Editar Ata</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+    <h1 th:text="${ata.id} != null ? 'Editar Ata' : 'Nova Ata'"></h1>
+    
+    <form th:action="@{/atas}" th:object="${ata}" method="post">
+        <input type="hidden" th:field="*{id}"/>
+
+        <label for="titulo">Título:</label>
+        <input type="text" id="titulo" th:field="*{titulo}" required>
+
+        <label for="dataEmissao">Data de Emissão:</label>
+        <input type="date" id="dataEmissao" th:field="*{dataEmissao}" required>
+
+        <label for="inicio">Início da Reunião:</label>
+        <input type="date" id="inicio" th:field="*{inicio}" required>
+
+        <label for="termino">Término da Reunião:</label>
+        <input type="date" id="termino" th:field="*{termino}" required>
+
+        <label for="pauta">Pauta:</label>
+        <textarea id="pauta" th:field="*{pauta}" required></textarea>
+
+        <label for="descricao">Descrição:</label>
+        <textarea id="descricao" th:field="*{descricao}" required></textarea>
+
+        <label for="tipo">Tipo:</label>
+        <select id="tipo" th:field="*{tipo}" required>
+            <option value="PUBLICA">Pública</option>
+            <option value="PRIVADA">Privada</option>
+        </select>
+
+        <label for="palavrasChave">Palavras-chave (separadas por vírgula):</label>
+        <input type="text" id="palavrasChave" th:field="*{palavrasChave}" placeholder="Ex: reunião, projeto">
+
+        <button type="submit">Salvar</button>
+    </form>
+
+    <a href="/atas">Voltar</a>
+</body>
+</html>

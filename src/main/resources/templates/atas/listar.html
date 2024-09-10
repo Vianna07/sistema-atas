@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Listar Atas</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+    <h1>Lista de Atas</h1>
+
+	<form th:action="@{/atas/buscar}" method="get">
+	    <div>
+	        <label for="titulo">Título:</label>
+	        <input type="text" id="titulo" name="titulo" placeholder="Buscar por título">
+	    </div>
+	    <div>
+	        <label for="dataEmissao">Data de Emissão:</label>
+	        <input type="date" id="dataEmissao" name="dataEmissao">
+	    </div>
+	    <div>
+	        <label for="palavraChave">Palavras-chave:</label>
+	        <input type="text" id="palavraChave" name="palavraChave" placeholder="Buscar por palavras-chave">
+	    </div>
+	    <button type="submit">Buscar</button>
+	</form>
+
+
+    <br>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Título</th>
+                <th>Data Emissão</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="ata : ${atas}">
+                <td th:text="${ata.titulo}"></td>
+                <td th:text="${ata.dataEmissao}"></td>
+                <td>
+                    <a th:href="@{'/atas/editar/' + ${ata.id}}">Editar</a> |
+                    <a th:href="@{'/atas/deletar/' + ${ata.id}}" onclick="return confirm('Tem certeza que deseja deletar?')">Deletar</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="/atas/nova" class="button">Nova Ata</a>
+</body>
+</html>
