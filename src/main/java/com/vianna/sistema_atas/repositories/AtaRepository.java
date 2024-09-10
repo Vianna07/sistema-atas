@@ -5,7 +5,7 @@ import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.vianna.sistema_atas.model.Ata;
+import com.vianna.sistema_atas.models.Ata;
 
 public interface AtaRepository extends JpaRepository<Ata, Long> {
     List<Ata> findByTituloContainingIgnoreCase(String titulo);

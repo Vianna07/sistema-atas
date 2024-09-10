@@ -8,8 +8,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-import com.vianna.sistema_atas.model.Ata;
-import com.vianna.sistema_atas.service.AtaService;
+import com.vianna.sistema_atas.models.Ata;
+import com.vianna.sistema_atas.services.AtaService;
 
 @Controller
 @RequestMapping("/atas")

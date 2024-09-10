@@ -1,4 +1,4 @@
-package com.vianna.sistema_atas.model;
+package com.vianna.sistema_atas.models;
 
 import lombok.Data;
 import java.time.LocalDate;

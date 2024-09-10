@@ -1,8 +1,8 @@
-package com.vianna.sistema_atas.service;
+package com.vianna.sistema_atas.services;
 
 import org.springframework.stereotype.Service;
 
-import com.vianna.sistema_atas.model.Ata;
+import com.vianna.sistema_atas.models.Ata;
 import com.vianna.sistema_atas.repositories.AtaRepository;
 
 import java.time.LocalDate;

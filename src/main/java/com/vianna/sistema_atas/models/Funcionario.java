@@ -1,4 +1,4 @@
-package com.vianna.sistema_atas.model;
+package com.vianna.sistema_atas.models;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
